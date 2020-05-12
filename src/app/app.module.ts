@@ -75,7 +75,7 @@ const appRoutes: Routes = [
     UserComponent,
     UsersComponent,
     UserCreateComponent
-    // ...
+    
   ],
   imports: [
     BrowserModule,
@@ -89,7 +89,7 @@ const appRoutes: Routes = [
     BookService,
     BeverageService,
     UserService
-    // ...
+
   ],
   bootstrap: [AppComponent]
 })
