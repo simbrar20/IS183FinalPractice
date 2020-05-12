@@ -29,7 +29,14 @@ export class BeveragesComponent implements OnInit {
   }
 
   deleteBeverage(id: string) {
-
+    this.beverageService.deleteBeverage(id).then((resp) => {
+      if (resp) {
+        this.beverages = this.beverages.filter((beverage) => {
+          return beverage['id'] !== id;
+        });
+      }
+    });
   }
 
-}
+  }
+  

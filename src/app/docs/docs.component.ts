@@ -15,7 +15,8 @@ export class DocsComponent implements OnInit {
   ngOnInit() {
     this.docs = {
       books: [],
-      users: []
+      users: [],
+      beverages: [],
     }
     this.toggle('toggleBooks');
 
@@ -148,9 +149,9 @@ export class DocsComponent implements OnInit {
       }
     ];
 
-    this.docs['tanks'] = [
+    this.docs['beverages'] = [
       {
-        description: 'Get a list of tanks',
+        description: 'Get a list of beverages',
         method: 'GET',
         endpoint: 'http://staging-book-api.us-west-1.elasticbeanstalk.com/api/v1/tank',
         payload: 'none',
@@ -158,9 +159,11 @@ export class DocsComponent implements OnInit {
         response: [
           {
             'id': 2,
-            'tank_name': 'w',
-            'serial_number': 'asdf',
-            'gallons': 3,
+            'beverage_name': 'Jameson',
+            'serial_number': '345-00-142',
+            'volume': 80,
+            'alcohol level': 20,
+            'price': 100,
             'user_id': null,
             'active': true,
             'created_at': '2017-05-18T00:00:00.000Z',
@@ -169,9 +172,11 @@ export class DocsComponent implements OnInit {
           },
           {
             'id': 3,
-            'tank_name': 'asdf',
-            'serial_number': 'asdf',
-            'gallons': 333,
+            'beverage_name': 'Absolut',
+            'serial_number': '763-900-123',
+            'volume': 1.75,
+            'alcohol level': 40,
+            'price': 30,
             'user_id': null,
             'active': true,
             'created_at': '2017-05-18T00:00:00.000Z',
@@ -180,9 +185,11 @@ export class DocsComponent implements OnInit {
           },
           {
             'id': 4,
-            'tank_name': 'asdf',
-            'serial_number': '23r',
-            'gallons': 3333,
+            'beverage_name': 'asdf',
+            'serial_number': '123-908-765',
+            'volume': 1.75,
+            'alcohol level': 25,
+            'price': 45,
             'user_id': null,
             'active': true,
             'created_at': '2017-05-18T00:00:00.000Z',
@@ -198,9 +205,9 @@ export class DocsComponent implements OnInit {
         params: 'id',
         response: {
           'id': 2,
-          'tank_name': 'w',
-          'serial_number': 'asdf',
-          'gallons': 3,
+          'tank_name': 'Jameson',
+          'serial_number': '456-376-999',
+          'volume': 80,
           'user_id': null,
           'active': true,
           'created_at': '2017-05-18T00:00:00.000Z',
@@ -209,20 +216,20 @@ export class DocsComponent implements OnInit {
         }
       },
       {
-        description: 'Update a tank',
+        description: 'Update a beverage',
         method: 'PUT',
         endpoint: 'http://staging-book-api.us-west-1.elasticbeanstalk.com/api/v1/tank/id/<id>',
         payload: {
-          'tank_name': 'some tank name',
-          'serial_number': 'some tank serial',
-          'gallons': 111
+          'beverage_name': 'Pepsi',
+          'serial_number': '12345-00-00',
+          'liters': 5
         },
         params: 'id',
         response: {
           'id': 2,
-          'tank_name': 'some tank name',
-          'serial_number': 'some tank serial',
-          'gallons': 111,
+          'tank_name': 'Pepsi',
+          'serial_number': '12345-00-00',
+          'Liters': 5,
           'user_id': null,
           'active': true,
           'created_at': '2017-05-18T00:00:00.000Z',
@@ -231,20 +238,20 @@ export class DocsComponent implements OnInit {
         }
       },
       {
-        description: 'Create a tank',
+        description: 'Create a beverage',
         method: 'POST',
         endpoint: 'http://staging-book-api.us-west-1.elasticbeanstalk.com/api/v1/tank',
         payload: {
-          'tank_name': 'some tank name2',
-          'serial_number': 'some tank serial2',
-          'gallons': 1112
+          'beverage_name': '7-UP',
+          'serial_number': '997-665-554',
+          'Liters': 2
         },
         params: 'none',
         response: {
           'id': 10,
-          'tank_name': 'some tank name2',
-          'serial_number': 'some tank serial2',
-          'gallons': 1112,
+          'beverage_name': '7-UP',
+          'serial_number': '997-665-554',
+          'liters': 2,
           'user_id': null,
           'active': true,
           'created_at': '2017-05-18T00:00:00.000Z',
@@ -253,7 +260,7 @@ export class DocsComponent implements OnInit {
         }
       },
       {
-        description: 'Delete a tank',
+        description: 'Delete a beverage',
         method: 'DELETE',
         endpoint: 'http://staging-book-api.us-west-1.elasticbeanstalk.com/api/v1/tank/id/<id>',
         payload: 'none',
